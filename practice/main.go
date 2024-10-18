@@ -1,13 +1,17 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func main() {
 
-	var aString string = "This is Go!"
-	fmt.Println(aString)
-	fmt.Printf("The variable's type is %T\n", aString)
-
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Print("Enter Text: ")
+	// like in java, characters are wrapped in single quotes while
+	// while full strings are wrapped in double quotes
+	input, _ := reader.ReadString('\n')
+	fmt.Println("You entered: ", input)
 }
